@@ -1,4 +1,4 @@
-import View from './View';
+import View from './View.js';
 import icons from 'url:../../img/icons.svg'; // Parcel 2
 
 class PaginationView extends View {
@@ -7,10 +7,9 @@ class PaginationView extends View {
   addHandlerClick(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--inline');
-
       if (!btn) return;
-      const goToPage = +btn.dataset.goto;
 
+      const goToPage = +btn.dataset.goto;
       handler(goToPage);
     });
   }
